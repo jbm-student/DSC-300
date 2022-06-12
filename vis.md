@@ -1,13 +1,5 @@
-Test:
-
-``` r
-library(ggplot2)
-qplot(speed, dist, data=cars)
-```
-
-![](vis_files/figure-markdown_github/foo-1.png)
-
-Vertical or Horizontal Barplot:
+Vertical or Horizontal Barplot
+------------------------------
 
 ``` r
 qplot(x=cut, fill=color, data=diamonds) + 
@@ -16,7 +8,8 @@ qplot(x=cut, fill=color, data=diamonds) +
 
 ![](vis_files/figure-markdown_github/vertical%20(stacked)%20barplot-1.png)
 
-Grouped or stacked bar chart:
+Grouped or stacked bar chart
+----------------------------
 
 ``` r
 ggplot(data=diamonds, aes(fill=color, y=price, x=cut)) +
@@ -26,11 +19,11 @@ ggplot(data=diamonds, aes(fill=color, y=price, x=cut)) +
 ![](vis_files/figure-markdown_github/grouped%20barplot-1.png)
 
 Heatmap:
+--------
 
 ``` r
-ggplot(data=diamonds, aes(X=x, Y=y, fill = z)) + 
-    # geom_tile(x, y, data=diamonds) + 
-    scale_fill_gradient()
+ggplot(data=diamonds, aes(x, y, fill = z)) + 
+    geom_tile()
 ```
 
 ![](vis_files/figure-markdown_github/heatmap-1.png)
