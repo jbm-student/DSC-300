@@ -1,0 +1,32 @@
+---
+title: "DSC310 Week 2"
+author: "Joshua Merrell"
+output: 
+  md_document:
+    variant: markdown_github
+---
+
+Test:
+```{r foo}
+library(ggplot2)
+qplot(speed, dist, data=cars)
+```
+
+Vertical or Horizontal Barplot:
+```{r, vertical (stacked) barplot}
+qplot(x=cut, fill=color, data=diamonds) + 
+    theme(plot.background = element_rect(fill="lightblue"))
+```
+
+Grouped or stacked bar chart:
+```{r grouped barplot}
+ggplot(data=diamonds, aes(fill=color, y=price, x=cut)) +
+    geom_bar(position="dodge", stat="identity")
+```
+
+Heatmap:
+```{r heatmap}
+ggplot(data=diamonds, aes(X=x, Y=y, fill = z)) + 
+    # geom_tile(x, y, data=diamonds) + 
+    scale_fill_gradient()
+```
