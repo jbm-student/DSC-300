@@ -6,6 +6,10 @@ output:
     variant: markdown_github
 ---
 
+```{r, libraries}
+library(ggplot2)
+```
+
 ## Vertical or Horizontal Barplot
 ```{r, vertical (stacked) barplot}
 qplot(x=cut, fill=color, data=diamonds) + 
@@ -20,6 +24,8 @@ ggplot(data=diamonds, aes(fill=color, y=price, x=cut)) +
 
 ## Heatmap:
 ```{r heatmap}
-ggplot(data=diamonds, aes(x, y, fill = z)) + 
-    geom_tile()
+ggplot(as.data.frame(table(diamonds[ ,c("cut", "clarity")])), 
+       aes(x = cut, y = clarity)) + 
+  geom_tile(aes(fill = Freq)) +
+  geom_text(aes(label = Freq), col = 'yellow')
 ```
