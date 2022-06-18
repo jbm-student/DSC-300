@@ -18,8 +18,9 @@ qplot(x=cut, fill=color, data=diamonds) +
 
 ## Grouped or stacked bar chart
 ```{r grouped barplot}
-ggplot(data=diamonds, aes(fill=color, y=price, x=cut)) +
-    geom_bar(position="dodge", stat="identity")
+ggplot(data=diamonds, aes(fill=clarity, x=cut)) +
+  geom_bar(position="dodge") +
+  theme(plot.background = element_rect("lightblue"))
 ```
 
 ## Heatmap:
