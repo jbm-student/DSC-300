@@ -10,7 +10,7 @@ output:
 library(ggplot2)
 ```
 
-# Week 2
+# Week 3
 ## Histogram
 ggplot(diamonds, aes(x=carat, fill = cut)) +
   geom_histogram(binwidth = .17) +
@@ -44,7 +44,7 @@ ggplot(diamonds, aes(x = carat, y = carat)) +
   ggtitle(label = "Diamonds Violent Plot",
           subtitle = "Joshua Merrell\nDSC310 Week 3")
 
-# Week 1
+# Week 2
 
 ## Vertical or Horizontal Barplot
 ```{r, vertical (stacked) barplot}
