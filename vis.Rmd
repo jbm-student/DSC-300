@@ -10,6 +10,42 @@ output:
 library(ggplot2)
 ```
 
+# Week 2
+## Histogram
+ggplot(diamonds, aes(x=carat, fill = cut)) +
+  geom_histogram(binwidth = .17) +
+  scale_fill_brewer(palette = 2) +
+  theme_classic() +
+  ggtitle(label = "Diamonds Histogram", 
+          subtitle = "Joshua Merrell\nDSC310 Week 3")
+
+## Density Plot
+ggplot(diamonds, aes(x = carat, fill = cut)) +
+  geom_density() +
+  theme_classic() +
+  scale_fill_brewer(palette = 2) +
+  ggtitle(label = "Diamonds Density Plot", 
+          subtitle = "Joshua Merrell\nDSC310 Week 3")
+
+## Boxplot
+ggplot(diamonds, aes(x = carat, fill = cut)) +
+  geom_boxplot() +
+  coord_flip() +
+  scale_fill_brewer(palette = 2) +
+  theme_classic() +
+  ggtitle(label = "Diamonds Boxplot", 
+          subtitle = "Joshua Merrell\nDSC310 Week 3")
+
+## Violin Plot
+ggplot(diamonds, aes(x = carat, y = carat)) +
+  geom_violin(fill = "lightskyblue") +
+  scale_fill_brewer(palette = 2) +
+  coord_flip() +
+  ggtitle(label = "Diamonds Violent Plot",
+          subtitle = "Joshua Merrell\nDSC310 Week 3")
+
+# Week 1
+
 ## Vertical or Horizontal Barplot
 ```{r, vertical (stacked) barplot}
 qplot(x=cut, fill=color, data=diamonds) + 
